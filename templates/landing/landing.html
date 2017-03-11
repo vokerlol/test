@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "style.css" %}">
+
+    <style>
+        html, body{
+        height:100%;
+        max-height: 100%;
+        font-family: 'Roboto', sans-serif;
+
+    }
+    .top-container{
+         padding-top: 10%;
+    }
+    .general-container{
+        background-color: indigo;
+        height: 100%;
+    }
+
+    .general-container form{
+        margin-top:20px;
+    }
+
+
+    .general-container form label{
+        font-weight: 100;
+
+        color: white;
+    }
+    .title{
+        text-align: center;
+        color: white;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
+
+}
+ .btn-orange{
+     background-color: #e8643e;
+     border: none;
+ }
+ .btn-orange:hover{
+     background-color: rgba(232, 100, 62, 0.67);
+     border: none;
+ }
+    </style>
+
+</head>
+
+<body>
+
+<div class="general-container">
+    <div class="container top-container">
+        <div class="row">
+
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1 class="title">Наш магазин скоро откроется!<br>
+                    Оставляйте Ваш имейл в форме ниже</h1>
+                <h1 class="title"> HELLO скоро</h1>
+
+                <form action="" method="post" class="form-inline text-center"> {% csrf_token %}
+                    <div class="form-group ">
+                        <label>Ваш мейл: </label>
+                        <input type="text" name="{{ form.name.email }}" class="form-control">
+                    </div>
+                    <div class="form-group ">
+                        <label>Ваше имя: </label>
+                        <input type="text" name="{{ form.name.name }}" class="form-control">
+                    </div>
+
+                        <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</body>
+</html>
